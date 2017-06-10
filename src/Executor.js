@@ -1,32 +1,15 @@
-/*
-  Copyright (C) 2015  Aliaksandr Aliashkevich
+var postgres     = require('./connectors/postgres/Database.js');
+var cassandra    = require('./connectors/cassandra/Database.js');
+var mysql        = require('./connectors/mysql/Database.js');
+var mssql        = require('./connectors/mssql/Database.js');
+var alasql       = require('./connectors/alasql/Database.js');
+var url          = require('url');
+var path         = require('path');
+var tunnel       = require('tunnel-ssh');
+var net          = require('net');
 
-      This program is free software: you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation, either version 3 of the License, or
-      (at your option) any later version.
-
-      This program is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
-
-      You should have received a copy of the GNU General Public License
-      along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-
-var postgres = require('./connectors/postgres/Database.js');
-var cassandra = require('./connectors/cassandra/Database.js');
-var mysql = require('./connectors/mysql/Database.js');
-var mssql = require('./connectors/mssql/Database.js');
-var alasql = require('./connectors/alasql/Database.js');
-var url = require('url');
-var path = require('path');
-var tunnel = require('tunnel-ssh');
-var net = require('net');
-
-var Tunnels = {};
-var TunnelPorts = {};
+var Tunnels      = {};
+var TunnelPorts  = {};
 var PortSequence = 15000;
 
 function resolveHome(filepath) {
@@ -131,15 +114,15 @@ var Executor = {
             PortSequence = PortSequence + 1;
             var mapped_db_url = db_url.protocol+'//'+auth+'localhost:'+PortSequence+url_path;
             var ssh_config = {
-                username: ssh_url.auth,
-                host: ssh_url.hostname,
-                port: ssh_url.port,
-                privateKey: identity_file,
-                dstHost: db_url.hostname,
-                dstPort: db_url.port,
+                username:     ssh_url.auth,
+                host:         ssh_url.hostname,
+                port:         ssh_url.port,
+                privateKey:   identity_file,
+                dstHost:      db_url.hostname,
+                dstPort:      db_url.port,
                 localHost:'127.0.0.1',
-                localPort: PortSequence,
-                keepAlive: true,
+                localPort:    PortSequence,
+                keepAlive:    true,
                 readyTimeout: 30000,
             };
 

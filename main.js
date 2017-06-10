@@ -22,15 +22,15 @@ if (process.platform == 'linux'){
     });
 }
 
-var electron = require('electron');
-var config = require('./build/Config');
+var electron      = require('electron');
+var config        = require('./build/Config');
 
-var app = electron.app;
+var app           = electron.app;
 var BrowserWindow = electron.BrowserWindow;
 
-var mainWindow = null;
-var urlToOpen = null;
-var files2open = [];
+var mainWindow    = null;
+var urlToOpen     = null;
+var files2open    = [];
 
 var createWindow = function(){
     mainWindow = new BrowserWindow({

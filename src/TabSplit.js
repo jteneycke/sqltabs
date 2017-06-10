@@ -1,24 +1,7 @@
-/*
-  Copyright (C) 2015  Aliaksandr Aliashkevich
-
-      This program is free software: you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation, either version 3 of the License, or
-      (at your option) any later version.
-
-      This program is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
-
-      You should have received a copy of the GNU General Public License
-      along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-
-var React = require('react');
-var ReactDOM = require('react-dom');
+var React      = require('react');
+var ReactDOM   = require('react-dom');
 var TabActions = require('./Actions');
-var TabsStore = require('./TabsStore');
+var TabsStore  = require('./TabsStore');
 
 var Splitter = React.createClass({
 
@@ -78,8 +61,8 @@ var TabSplit = React.createClass({
     },
 
     setInitialSize: function(){
-        var main_container = $(ReactDOM.findDOMNode(this));
-        var first_container = $(ReactDOM.findDOMNode(this.refs.first_container));
+        var main_container   = $(ReactDOM.findDOMNode(this));
+        var first_container  = $(ReactDOM.findDOMNode(this.refs.first_container));
         var second_container = $(ReactDOM.findDOMNode(this.refs.second_container));
 
         main_container.height($(document).height() - main_container.offset().top);
@@ -102,10 +85,10 @@ var TabSplit = React.createClass({
     },
 
     resizeContainers: function(){
-        var main_container = $(ReactDOM.findDOMNode(this));
-        var first_container = $(ReactDOM.findDOMNode(this.refs.first_container));
+        var main_container   = $(ReactDOM.findDOMNode(this));
+        var first_container  = $(ReactDOM.findDOMNode(this.refs.first_container));
         var second_container = $(ReactDOM.findDOMNode(this.refs.second_container));
-        var splitter = $(ReactDOM.findDOMNode(this.refs.splitter));
+        var splitter         = $(ReactDOM.findDOMNode(this.refs.splitter));
 
         main_container.height($(document).height() - main_container.offset().top);
 
@@ -138,8 +121,8 @@ var TabSplit = React.createClass({
     },
 
     horizontalResize: function(e){
-        var main_container = $(ReactDOM.findDOMNode(this));
-        var first_container = $(ReactDOM.findDOMNode(this.refs.first_container));
+        var main_container   = $(ReactDOM.findDOMNode(this));
+        var first_container  = $(ReactDOM.findDOMNode(this.refs.first_container));
         var second_container = $(ReactDOM.findDOMNode(this.refs.second_container));
 
         var h1 = e.pageY - first_container.offset().top;
@@ -152,8 +135,8 @@ var TabSplit = React.createClass({
     },
 
     verticalResize: function(e){
-        var main_container = $(ReactDOM.findDOMNode(this));
-        var first_container = $(ReactDOM.findDOMNode(this.refs.first_container));
+        var main_container   = $(ReactDOM.findDOMNode(this));
+        var first_container  = $(ReactDOM.findDOMNode(this.refs.first_container));
         var second_container = $(ReactDOM.findDOMNode(this.refs.second_container));
 
         var w1 = e.pageX - first_container.offset().left;
@@ -215,9 +198,10 @@ var TabSplit = React.createClass({
     resizeHandler: function(){
         // handle risize of outer container for vertical view
         if (this.state.type == 'vertical' && !this.state.project_visible){
-            var first_container = $(ReactDOM.findDOMNode(this.refs.first_container));
+            var first_container  = $(ReactDOM.findDOMNode(this.refs.first_container));
             var second_container = $(ReactDOM.findDOMNode(this.refs.second_container));
-            var second_overflow = (first_container.offset().left + first_container.width() + second_container.width() + 5) - $(document).width();
+            var second_overflow  = (first_container.offset().left + first_container.width() + second_container.width() + 5) - $(document).width();
+
             if ( second_overflow > 0) {
                 // reduce second container width
                 var w2 = second_container.width() - second_overflow;

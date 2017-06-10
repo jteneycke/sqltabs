@@ -1,27 +1,9 @@
-/*
-  Copyright (C) 2015  Aliaksandr Aliashkevich
+var React      = require('react');
+var Nav        = require('react-bootstrap').Nav;
+var NavItem    = require('react-bootstrap').NavItem;
+var Button     = require('react-bootstrap').Button;
 
-      This program is free software: you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation, either version 3 of the License, or
-      (at your option) any later version.
-
-      This program is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
-
-      You should have received a copy of the GNU General Public License
-      along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-
-var React = require('react');
-var Nav = require('react-bootstrap').Nav;
-var NavItem = require('react-bootstrap').NavItem;
-var Button = require('react-bootstrap').Button;
-
-var TabsStore = require('./TabsStore');
-
+var TabsStore  = require('./TabsStore');
 var TabActions = require('./Actions');
 
 var CloseButton = React.createClass({
@@ -46,10 +28,10 @@ var TabsNav = React.createClass({
     getInitialState: function(){
 
         return {
-            tabs: TabsStore.getAll(),
-            order: TabsStore.order,
+            tabs:        TabsStore.getAll(),
+            order:       TabsStore.order,
             selectedTab: TabsStore.selectedTab,
-            colors: this.getColors(),
+            colors:      this.getColors(),
         };
     },
 
@@ -74,9 +56,9 @@ var TabsNav = React.createClass({
     getColors: function(){
         var colors = {};
         for (item in TabsStore.order){
-            var connstr = TabsStore.getConnstr(item);
+            var connstr         = TabsStore.getConnstr(item);
             var connectionColor = TabsStore.getConnectionColor(connstr);
-            colors[connstr] = connectionColor;
+            colors[connstr]     = connectionColor;
         }
         return colors;
     },
@@ -94,9 +76,9 @@ var TabsNav = React.createClass({
         var tabs = this.state.tabs;
         var itemHtml = items.map( function(item) {
 
-                var connstr = TabsStore.getConnstr(item);
+                var connstr         = TabsStore.getConnstr(item);
                 var connectionColor = TabsStore.getConnectionColor(connstr);
-                var color_circle = <span className="connection-color-circle" style={{background: connectionColor}}> &nbsp; </span>
+                var color_circle    = <span className="connection-color-circle" style={{background: connectionColor}}> &nbsp; </span>
 
                 var title = <span className="tab-title">
                     {tabs[item].getTitle()}

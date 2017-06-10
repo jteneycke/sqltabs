@@ -1,23 +1,5 @@
-/*
-  Copyright (C) 2015  Aliaksandr Aliashkevich
-
-      This program is free software: you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation, either version 3 of the License, or
-      (at your option) any later version.
-
-      This program is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
-
-      You should have received a copy of the GNU General Public License
-      along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-
-var React = require('react');
 var ReactDOM = require('react-dom');
-var c3 = require('c3');
+var c3       = require('c3');
 
 var Chart = React.createClass({
 
@@ -28,10 +10,9 @@ var Chart = React.createClass({
         });
         this.props.dataset.data.unshift(fields);
 
-        var data = {};
-
+        var data          = {};
         var column_charts = ['line', 'spline', 'area', 'step', 'area-spline', 'area-step'];
-        var row_charts = ['bar', 'pie', 'donut'];
+        var row_charts    = ['bar', 'pie', 'donut'];
 
         if (column_charts.indexOf(this.props.type) != -1){
             // field name as a header
