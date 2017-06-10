@@ -128,26 +128,26 @@ var Editor = React.createClass({
     },
 
     componentWillUnmount: function(){
-        TabsStore.unbind('change', this.changeHandler);
-        TabsStore.unbind('editor-resize', this.resize);
-        TabsStore.unbind('change-theme', this.changeTheme);
-        TabsStore.unbind('change-mode', this.changeMode);
-        TabsStore.unbind('open-file-'+this.props.eventKey, this.fileOpenHandler);
-        TabsStore.unbind('save-file-'+this.props.eventKey, this.fileSaveHandler);
-        TabsStore.unbind('save-file-'+this.props.eventKey, this.fileCloseHandler);
-        TabsStore.unbind('execute-script-'+this.props.eventKey, this.execHandler);
-        TabsStore.unbind('execute-block-'+this.props.eventKey, this.execBlockHandler);
-        TabsStore.unbind('execute-all-'+this.props.eventKey, this.execAllHandler);
-        TabsStore.unbind('format-block-'+this.props.eventKey, this.reFormatBlockHandler);
-        TabsStore.unbind('format-all-'+this.props.eventKey, this.reFormatAllHandler);
-        TabsStore.unbind('editor-find-next', this.findNext);
-        TabsStore.unbind('object-info-'+this.props.eventKey, this.objectInfoHandler);
+        TabsStore.unbind('change',                                  this.changeHandler);
+        TabsStore.unbind('editor-resize',                           this.resize);
+        TabsStore.unbind('change-theme',                            this.changeTheme);
+        TabsStore.unbind('change-mode',                             this.changeMode);
+        TabsStore.unbind('open-file-'+this.props.eventKey,          this.fileOpenHandler);
+        TabsStore.unbind('save-file-'+this.props.eventKey,          this.fileSaveHandler);
+        TabsStore.unbind('save-file-'+this.props.eventKey,          this.fileCloseHandler);
+        TabsStore.unbind('execute-script-'+this.props.eventKey,     this.execHandler);
+        TabsStore.unbind('execute-block-'+this.props.eventKey,      this.execBlockHandler);
+        TabsStore.unbind('execute-all-'+this.props.eventKey,        this.execAllHandler);
+        TabsStore.unbind('format-block-'+this.props.eventKey,       this.reFormatBlockHandler);
+        TabsStore.unbind('format-all-'+this.props.eventKey,         this.reFormatAllHandler);
+        TabsStore.unbind('editor-find-next',                        this.findNext);
+        TabsStore.unbind('object-info-'+this.props.eventKey,        this.objectInfoHandler);
         TabsStore.unbind('paste-history-item-'+this.props.eventKey, this.pasteHistoryHandler);
-        TabsStore.unbind('focus-editor-'+this.props.eventKey, this.focusEditorHandler);
-        TabsStore.unbind('show-project-'+this.props.eventKey, this.hideCompleter);
-        TabsStore.unbind('hide-project-'+this.props.eventKey, this.hideCompleter);
-        TabsStore.unbind('toggle-project-'+this.props.eventKey, this.hideCompleter);
-        TabsStore.unbind('completion-update', this.completionUpdateHandler);
+        TabsStore.unbind('focus-editor-'+this.props.eventKey,       this.focusEditorHandler);
+        TabsStore.unbind('show-project-'+this.props.eventKey,       this.hideCompleter);
+        TabsStore.unbind('hide-project-'+this.props.eventKey,       this.hideCompleter);
+        TabsStore.unbind('toggle-project-'+this.props.eventKey,     this.hideCompleter);
+        TabsStore.unbind('completion-update',                       this.completionUpdateHandler);
 
         this.editor_input.removeEventListener("keydown", this.keyHandler);
     },
@@ -318,23 +318,23 @@ var Editor = React.createClass({
         var init_position = this.editor.getCursorPosition();
         var value = TabsStore.getSearchValue();
         var ret = this.editor.find(value ,{
-          backwards: false,
-          wrap: false,
+          backwards:     false,
+          wrap:          false,
           caseSensitive: false,
-          wholeWord: false,
-          regExp: false,
-          start: 0,
+          wholeWord:     false,
+          regExp:        false,
+          start:         0,
         });
 
         if (typeof(ret) == 'undefined'){ // start from the beginning in case of end of file
             this.editor.gotoLine(0, 0, true);
             var ret = this.editor.find(value ,{
-              backwards: false,
-              wrap: false,
+              backwards:     false,
+              wrap:          false,
               caseSensitive: false,
-              wholeWord: false,
-              regExp: false,
-              start: 0,
+              wholeWord:     false,
+              regExp:        false,
+              start:         0,
             });
 
             if (typeof(ret) == 'undefined'){ // if nothing found
@@ -464,29 +464,29 @@ var Editor = React.createClass({
         var completer = $(ReactDOM.findDOMNode(this.refs.completer));
         completer.hide();
         this.editor.commands.addCommand({ // enable tab back
-            name: "indent",
-            bindKey: {win: "Tab", mac: "Tab"},
-            exec: function(editor) { editor.indent(); },
+            name:              "indent",
+            bindKey:           {win: "Tab", mac: "Tab"},
+            exec:              function(editor) { editor.indent(); },
             multiSelectAction: "forEach",
-            scrollIntoView: "selectionPart"
+            scrollIntoView:    "selectionPart"
         });
 
         this.editor.commands.addCommand({ // enable up back
-            name: "golineup",
-            bindKey: {win: "Up", mac: "Up|Ctrl-P"},
-            exec: function(editor, args) { editor.navigateUp(args.times); },
+            name:              "golineup",
+            bindKey:           {win: "Up", mac: "Up|Ctrl-P"},
+            exec:              function(editor, args) { editor.navigateUp(args.times); },
             multiSelectAction: "forEach",
-            scrollIntoView: "cursor",
-            readOnly: true
+            scrollIntoView:    "cursor",
+            readOnly:          true
         });
 
         this.editor.commands.addCommand({ // enable down back
-            name: "golinedown",
-            bindKey: {win: "Down", mac: "Down|Ctrl-N"},
-            exec: function(editor, args) { editor.navigateDown(args.times); },
+            name:              "golinedown",
+            bindKey:           {win: "Down", mac: "Down|Ctrl-N"},
+            exec:              function(editor, args) { editor.navigateDown(args.times); },
             multiSelectAction: "forEach",
-            scrollIntoView: "cursor",
-            readOnly: true
+            scrollIntoView:    "cursor",
+            readOnly:          true
         });
 
     },

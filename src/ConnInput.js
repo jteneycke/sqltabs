@@ -26,7 +26,7 @@ var ConnInput = React.createClass({
         return {
             connstr: TabsStore.getConnstr(this.props.eventKey),
             history: TabsStore.connectionHistory,
-            active: false,
+            active:  false,
             hilight: -1
         };
     },

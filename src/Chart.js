@@ -28,10 +28,9 @@ var Chart = React.createClass({
         });
         this.props.dataset.data.unshift(fields);
 
-        var data = {};
-
+        var data          = {};
         var column_charts = ['line', 'spline', 'area', 'step', 'area-spline', 'area-step'];
-        var row_charts = ['bar', 'pie', 'donut'];
+        var row_charts    = ['bar', 'pie', 'donut'];
 
         if (column_charts.indexOf(this.props.type) != -1){
             // field name as a header

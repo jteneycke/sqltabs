@@ -131,15 +131,15 @@ var Executor = {
             PortSequence = PortSequence + 1;
             var mapped_db_url = db_url.protocol+'//'+auth+'localhost:'+PortSequence+url_path;
             var ssh_config = {
-                username: ssh_url.auth,
-                host: ssh_url.hostname,
-                port: ssh_url.port,
-                privateKey: identity_file,
-                dstHost: db_url.hostname,
-                dstPort: db_url.port,
+                username:     ssh_url.auth,
+                host:         ssh_url.hostname,
+                port:         ssh_url.port,
+                privateKey:   identity_file,
+                dstHost:      db_url.hostname,
+                dstPort:      db_url.port,
                 localHost:'127.0.0.1',
-                localPort: PortSequence,
-                keepAlive: true,
+                localPort:    PortSequence,
+                keepAlive:    true,
                 readyTimeout: 30000,
             };
 
