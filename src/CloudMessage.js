@@ -16,13 +16,13 @@
 */
 
 
-var React = require('react');
-var Modal = require('react-bootstrap').Modal;
-var Button = require('react-bootstrap').Button;
+var React        = require('react');
+var Modal        = require('react-bootstrap').Modal;
+var Button       = require('react-bootstrap').Button;
 var OverlayMixin = require('react-bootstrap').OverlayMixin;
-var TabsStore = require('./TabsStore');
-var Actions = require('./Actions');
-var Shell = require('electron').shell;
+var TabsStore    = require('./TabsStore');
+var Actions      = require('./Actions');
+var Shell        = require('electron').shell;
 
 var CloudMessage = React.createClass({
 

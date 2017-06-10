@@ -16,17 +16,18 @@
 */
 
 var TabsStore = require('./TabsStore');
-var Actions = require('./Actions');
-var React = require('react');
-var Ace = require('brace');
+var Actions   = require('./Actions');
+var React     = require('react');
+var Ace       = require('brace');
+
 require('brace/mode/pgsql');
 require('brace/theme/chrome');
 require('brace/theme/idle_fingers');
 require('brace/keybinding/vim');
 
 var Cassandra = require('./connectors/cassandra/Renderer.js');
-var Mysql = require('./connectors/mysql/Renderer.js');
-var MSsql = require('./connectors/mssql/Renderer.js');
+var Mysql     = require('./connectors/mysql/Renderer.js');
+var MSsql     = require('./connectors/mssql/Renderer.js');
 
 var ObjectInfo = React.createClass({
 

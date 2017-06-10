@@ -15,15 +15,15 @@
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Actions = require('./Actions');
+var React     = require('react');
+var ReactDOM  = require('react-dom');
+var Actions   = require('./Actions');
 var TabsStore = require('./TabsStore');
-var remote = require('electron').remote;
-var dialog = remote.dialog;
-var fs = require('fs');
-var path = require('path');
-var async = require('async');
+var remote    = require('electron').remote;
+var dialog    = remote.dialog;
+var fs        = require('fs');
+var path      = require('path');
+var async     = require('async');
 
 var Project = React.createClass({
 

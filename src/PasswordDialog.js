@@ -15,13 +15,13 @@
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Modal = require('react-bootstrap').Modal;
-var Button = require('react-bootstrap').Button;
+var React        = require('react');
+var ReactDOM     = require('react-dom');
+var Modal        = require('react-bootstrap').Modal;
+var Button       = require('react-bootstrap').Button;
 var OverlayMixin = require('react-bootstrap').OverlayMixin;
-var TabsStore = require('./TabsStore');
-var Actions = require('./Actions');
+var TabsStore    = require('./TabsStore');
+var Actions      = require('./Actions');
 
 var PasswordDialog = React.createClass({
 

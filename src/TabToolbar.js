@@ -15,10 +15,10 @@
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-var React = require('react');
-var Actions = require('./Actions');
-var TabsStore = require('./TabsStore');
-var ConnInput = require('./ConnInput');
+var React       = require('react');
+var Actions     = require('./Actions');
+var TabsStore   = require('./TabsStore');
+var ConnInput   = require('./ConnInput');
 var ColorPicker = require('react-color').CirclePicker;
 
 var TabToolbar = React.createClass({

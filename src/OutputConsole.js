@@ -15,12 +15,12 @@
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-var React = require('react');
-var Chart = require('./Chart');
+var React      = require('react');
+var Chart      = require('./Chart');
 var ObjectInfo = require('./ObjectInfo');
-var Marked = require('marked');
-var Actions = require('./Actions');
-var SqlDoc = require('sqldoc');
+var Marked     = require('marked');
+var Actions    = require('./Actions');
+var SqlDoc     = require('sqldoc');
 
 var OutputConsole = React.createClass({
 

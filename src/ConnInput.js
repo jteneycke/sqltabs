@@ -15,10 +15,10 @@
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-var React = require('react');
-var ReactDOM = require('react-dom');
+var React      = require('react');
+var ReactDOM   = require('react-dom');
 var TabActions = require('./Actions');
-var TabsStore = require('./TabsStore');
+var TabsStore  = require('./TabsStore');
 
 var ConnInput = React.createClass({
 

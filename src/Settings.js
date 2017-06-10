@@ -15,8 +15,8 @@
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-var React = require('react');
-var Actions = require('./Actions');
+var React     = require('react');
+var Actions   = require('./Actions');
 var TabsStore = require('./TabsStore');
 
 var Settings = React.createClass({

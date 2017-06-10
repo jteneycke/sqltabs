@@ -15,18 +15,18 @@
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-var postgres = require('./connectors/postgres/Database.js');
-var cassandra = require('./connectors/cassandra/Database.js');
-var mysql = require('./connectors/mysql/Database.js');
-var mssql = require('./connectors/mssql/Database.js');
-var alasql = require('./connectors/alasql/Database.js');
-var url = require('url');
-var path = require('path');
-var tunnel = require('tunnel-ssh');
-var net = require('net');
+var postgres     = require('./connectors/postgres/Database.js');
+var cassandra    = require('./connectors/cassandra/Database.js');
+var mysql        = require('./connectors/mysql/Database.js');
+var mssql        = require('./connectors/mssql/Database.js');
+var alasql       = require('./connectors/alasql/Database.js');
+var url          = require('url');
+var path         = require('path');
+var tunnel       = require('tunnel-ssh');
+var net          = require('net');
 
-var Tunnels = {};
-var TunnelPorts = {};
+var Tunnels      = {};
+var TunnelPorts  = {};
 var PortSequence = 15000;
 
 function resolveHome(filepath) {

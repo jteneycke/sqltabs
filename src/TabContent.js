@@ -1,30 +1,30 @@
 /*
   Copyright (C) 2015  Aliaksandr Aliashkevich
-  
+
       This program is free software: you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
       the Free Software Foundation, either version 3 of the License, or
       (at your option) any later version.
-  
+
       This program is distributed in the hope that it will be useful,
       but WITHOUT ANY WARRANTY; without even the implied warranty of
       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
       GNU General Public License for more details.
-  
+
       You should have received a copy of the GNU General Public License
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-var React = require('react');
-var TabsStore = require('./TabsStore');
-var TabActions = require('./Actions');
+var React         = require('react');
+var TabsStore     = require('./TabsStore');
+var TabActions    = require('./Actions');
 var OutputConsole = require('./OutputConsole');
-var TabSplit = require('./TabSplit');
-var Editor = require('./Editor');
-var TabToolbar = require('./TabToolbar');
-var SearchBox = require('./SearchBox');
-var Settings = require('./Settings');
-var Project = require('./Project');
+var TabSplit      = require('./TabSplit');
+var Editor        = require('./Editor');
+var TabToolbar    = require('./TabToolbar');
+var SearchBox     = require('./SearchBox');
+var Settings      = require('./Settings');
+var Project       = require('./Project');
 
 var TabContent = React.createClass({
 
@@ -35,11 +35,11 @@ var TabContent = React.createClass({
         };
     },
 
-    componentDidMount: function() {  
+    componentDidMount: function() {
         TabsStore.bind('change-theme', this.storeChangedHandler);
     },
 
-    componentWillUnmount: function() {  
+    componentWillUnmount: function() {
         TabsStore.unbind('change-theme', this.storeChangedHandler);
     },
 

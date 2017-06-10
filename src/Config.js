@@ -15,11 +15,11 @@
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-var lowdb = require('lowdb');
-var path = require('path');
-var fs = require('fs');
+var lowdb       = require('lowdb');
+var path        = require('path');
+var fs          = require('fs');
 
-var config_dir = path.join((process.env.HOME || process.env.HOMEPATH || process.env.APPDATA), '.sqltabs')
+var config_dir  = path.join((process.env.HOME || process.env.HOMEPATH || process.env.APPDATA), '.sqltabs')
 var config_path = path.join(config_dir, 'config.json')
 
 if (!fs.existsSync(config_dir)){

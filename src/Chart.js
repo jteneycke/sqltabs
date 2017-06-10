@@ -15,9 +15,9 @@
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-var React = require('react');
+var React    = require('react');
 var ReactDOM = require('react-dom');
-var c3 = require('c3');
+var c3       = require('c3');
 
 var Chart = React.createClass({
 

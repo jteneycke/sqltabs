@@ -15,14 +15,14 @@
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-var Actions = require ('./Actions');
-var TabsStore = require('./TabsStore');
-var remote = require('electron').remote;
-var Menu = remote.Menu;
+var Actions       = require ('./Actions');
+var TabsStore     = require('./TabsStore');
+var remote        = require('electron').remote;
+var Menu          = remote.Menu;
 var BrowserWindow = remote.BrowserWindow;
-var dialog = remote.dialog;
-var app = remote.app;
-var fs = require('fs');
+var dialog        = remote.dialog;
+var app           = remote.app;
+var fs            = require('fs');
 
 if (typeof(DEVMODE) == 'undefined'){
     DEVMODE = true;

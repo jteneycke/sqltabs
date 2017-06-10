@@ -16,10 +16,10 @@
 */
 
 
-var dispatcher = require('./Dispatcher');
-var AppDispatcher = dispatcher.AppDispatcher;
+var dispatcher        = require('./Dispatcher');
+var AppDispatcher     = dispatcher.AppDispatcher;
 var SignalsDispatcher = dispatcher.SignalsDispatcher;
-var DBDispatcher = dispatcher.DBDispatcher;
+var DBDispatcher      = dispatcher.DBDispatcher;
 
 var QueryCallback = function(key, result){
     DBDispatcher.dispatch({

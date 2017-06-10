@@ -15,13 +15,13 @@
       along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-var React = require('react');
+var React      = require('react');
 var Dispatcher = require('flux').Dispatcher;
-var TabsStore = require('./TabsStore');
-var Executor = require('./Executor');
-var Config = require('./Config');
-var History = require('./History');
-var Cloud = require('./Cloud');
+var TabsStore  = require('./TabsStore');
+var Executor   = require('./Executor');
+var Config     = require('./Config');
+var History    = require('./History');
+var Cloud      = require('./Cloud');
 
 var AppDispatcher = new Dispatcher();
 var SignalsDispatcher = new Dispatcher();

@@ -1,5 +1,5 @@
 --- chart area-spline
-SELECT 
+SELECT
     n,
     sin(n) sinn,
     n*sin(n) nsinn,

@@ -16,9 +16,9 @@
 */
 
 var MicroEvent = require('microevent');
-var Config = require('./Config');
-var fs = require('fs');
-var EOL = require('os').EOL;
+var Config     = require('./Config');
+var fs         = require('fs');
+var EOL        = require('os').EOL;
 
 var Sequence = function(start){
     this.curval = start;
